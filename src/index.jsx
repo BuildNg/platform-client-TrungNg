@@ -4,6 +4,8 @@ import {
   BrowserRouter, Routes, Route, NavLink, useParams,
 } from 'react-router-dom';
 import './style.scss';
+import Counter from './components/counter';
+import Controls from './components/controls';
 
 function About(props) {
   return <div> All there is to know about me </div>;
@@ -21,6 +23,7 @@ function Nav(props) {
     <nav>
       <ul>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/welcome">Welcome</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/test/id1">test id1</NavLink></li>
         <li><NavLink to="/test/id2">test id2</NavLink></li>
@@ -39,7 +42,15 @@ function App(props) {
       <div>
         <Nav />
         <Routes>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/"
+            element={(
+              <div>
+                <Counter />
+                <Controls />
+              </div>
+            )}
+          />
+          <Route path="/welcome" element={<Welcome />} />
           <Route path="/about" element={<About />} />
           <Route path="/test/:id" element={<Test />} />
           <Route path="*" element={<FallBack />} />
