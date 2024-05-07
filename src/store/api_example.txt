@@ -1,0 +1,21 @@
+# all posts get:
+curl -X GET "https://platform.cs52.me/api/posts?key=YOURKEY"
+
+# create new post
+curl -X POST -H "Content-Type: application/json" -d '{
+    "title": "first post",
+    "tags": "words",
+    "content":  "this is a test post",
+    "coverUrl": "https://media.giphy.com/media/gyRWkLSQVqlPi/giphy.gif"
+}' "https://platform.cs52.me/api/posts/?key=YOURKEY"
+
+# update by POSTID
+curl -X PUT -H "Content-Type: application/json" -d '{
+    "title": "new title"
+}' "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
+
+# fetch 1 by POSTID
+curl -X GET "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
+
+# delete by POSTID
+curl -X DELETE -H "Content-Type: application/json" "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
