@@ -76,18 +76,18 @@ function Post(props) {
         <Form className="">
           <Form.Group className="mb-3">
             <Form.Label>Title</Form.Label>
-            <Form.Control disabled={!isEditing} value={title || ''} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Enter title" />
+            <Form.Control disabled={!isEditing} value={title || ''} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Edit title" />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Tags</Form.Label>
-            <Form.Control disabled={!isEditing} value={tags || ''} onChange={(e) => setTags(e.target.value)} type="text" placeholder="Enter title" />
+            <Form.Control disabled={!isEditing} value={tags || ''} onChange={(e) => setTags(e.target.value)} type="text" placeholder="Edit tags" />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Content</Form.Label>
             {isEditing ? (
-              <Form.Control disabled={!isEditing} value={content || ''} onChange={(e) => setContent(e.target.value)} as="textarea" placeholder="Enter title" rows={3} />
+              <Form.Control disabled={!isEditing} value={content || ''} onChange={(e) => setContent(e.target.value)} as="textarea" placeholder="Edit content" rows={3} />
             ) : (
               <ReactMarkdown>
                 {content}

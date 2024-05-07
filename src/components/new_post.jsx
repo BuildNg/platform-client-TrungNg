@@ -24,11 +24,15 @@ function NewPost(props) {
   };
 
   const handleSave = async () => {
-    const fields = {
-      title, tags, content, coverUrl,
-    };
-    await createPost(fields);
-    navigate('/');
+    if (!title || !tags || !content) {
+      alert('Please fill out title, tags, and content.');
+    } else {
+      const fields = {
+        title, tags, content, coverUrl,
+      };
+      await createPost(fields);
+      navigate('/');
+    }
   };
 
   return (
@@ -41,7 +45,7 @@ function NewPost(props) {
           </Form.Group>
           <Form.Group className="mb-5">
             <Form.Label>Tags</Form.Label>
-            <Form.Control value={tags} type="text" onChange={handleTagsChange} placeholder="Enter Title here" />
+            <Form.Control value={tags} type="text" onChange={handleTagsChange} placeholder="Enter Tags here" />
           </Form.Group>
           <Form.Group className="mb-5">
             <Form.Label>Content</Form.Label>
