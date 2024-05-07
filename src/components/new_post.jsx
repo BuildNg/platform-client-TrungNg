@@ -14,7 +14,7 @@ function NewPost(props) {
   const navigate = useNavigate();
   const createPost = useStore((state) => state.postSlice.createPost);
 
-  const handleContentChange = (event) => setContent(event.target.val);
+  const handleContentChange = (event) => setContent(event.target.value);
   const handleTitleChange = (event) => setTitle(event.target.value);
   const handleTagsChange = (event) => setTags(event.target.value);
   const handleUrlChange = (event) => setCoverUrl(event.target.value);
