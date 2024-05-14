@@ -31,7 +31,7 @@ function Post(props) {
     if (post) {
       setTitle(post.title || '');
       setContent(post.content || '');
-      setTags(post.tags || '');
+      setTags(post.tags ? post.tags.join(' ') : ''); // Convert tags array to space-separated string
     }
   }, [post]);
 

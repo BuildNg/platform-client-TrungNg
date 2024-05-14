@@ -20,7 +20,7 @@ function Posts(props) {
         <Card.Img variant="top" src={coverUrl} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{tags}</Card.Text>
+          <Card.Text>{tags ? tags.join(' ') : ''}</Card.Text>
         </Card.Body>
       </Card>
     </div>

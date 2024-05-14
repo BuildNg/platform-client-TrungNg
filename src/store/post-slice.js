@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ROOT_URL = 'https://platform.cs52.me/api';
+const ROOT_URL = 'https://platform-api-buildng.onrender.com/api';
 const API_KEY = '?key=Trung_Nguyen';
 
 export default function createPostSlice(set, get) {
